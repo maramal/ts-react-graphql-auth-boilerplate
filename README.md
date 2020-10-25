@@ -1,44 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Plantilla de Frontend para autenticación de usuarios con JWT
 
-## Available Scripts
+Este proyecto se complementa con el servidor Express [alojado en Github](https://github.com/maramal/ts-express-graphql-pg-auth-boilerplate).
 
-In the project directory, you can run:
+El objetivo de este proyecto es proveer una base para cualquier sistema que requiera autenticación mediante token JWT.
 
-### `yarn start`
+El proyecto cuenta con las siguientes páginas:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Acción | Ruta | Archivo | Descripción |
+| ------ | ---- | ------- | ----------- |
+| Confirmar usuario | `/confirmar/:token` | `src/app/confirm.tsx` | Confirma un usuario
+| Contraseña olvidada | `/contraseña-olvidada` | `src/app/forgot_password.tsx` | Permite al usuario enviar un correo para cambiar su contraseña |
+| Inicio | `/` | `src/app/home.tsx` | Página de inicio |
+| Ingreso | `/ingreso` | `src/app/login.tsx` | Ingreso de usuario |
+| Página no encontrada | `*` | `src/app/not-found.tsx` | Página alternativa a las rutas existentes |
+| Perfil | `/perfil` | `src/profile.tsx` | Página de perfil de usuario |
+| Registro | `/registro` | `src/register.tsx` | Permite al usuario registrar una cuenta nueva |
+| Reenviar confirmación | `/reenviar-confirmacion` | `src/resend_confirm.tsx` | Permite al usuario enviar un nuevo enlace de confirmación de correo |
+| Reiniciar contraseña | `/reiniciar-contraseña` | `src/reset_password.tsx` | Permite al usuario ingresar una nueva contraseña |
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Los siguientes comandos pueden ser ejecutados desde la terminal (CLI):
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* `npm start`: Comienza la aplicación en el puerto predeterminado (3000).
+* `npm run build`: Construye todos los archivos para su deployment en producción.
+* `npm run eject`: Construye todos los archivos para su deployment y posterior configuración. **Nota: Esta acción no se puede volver atrás**.
+* `npm run gql`: Compila el código dentro de la carpeta `src/gql/*.graphql` generando los hooks que se pueden utilizar para GraphQL en el servidor y los genera en `src/gql/generated`.
